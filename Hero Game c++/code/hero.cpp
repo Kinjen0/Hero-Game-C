@@ -1,0 +1,8 @@
+/*check collisions
+health
+movement
+damage
+animation
+
+
+*/

@@ -1,0 +1,7 @@
+/*
+speed
+damage
+health
+
+
+*/
