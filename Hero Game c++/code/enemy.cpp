@@ -4,7 +4,7 @@ movement
 
 
 */
-class enemies
+class enemies 
 {
 	void spawnEnemy()
 	{
