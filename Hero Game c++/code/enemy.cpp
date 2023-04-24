@@ -12,49 +12,6 @@ movement
 #include <cmath>
 
 
-class enemies 
-{
-	void spawnEnemy()
-	{
-		CustomSprite enemy;
-
-		int enemyType = rand() % 3;
-		if (enemyType == ENEMY_FROG)
-		{
-			enemy.setTexture(graphics/frog.png);
-			enemy.setScale(0.5f, 0.5f);
-		}
-		else if (enemyType == ENEMY_CRICKET)
-		{
-			enemy.setTexture(cricketTexture);
-			enemy.setScale(0.5f, 0.5f);
-		}
-		else // Add squirrel enemy type
-		{
-			loadSquirrelTexture();
-			enemy.setTexture(squirrelTexture);
-			enemy.setScale(2.0f, 2.0f); // Scale the squirrel sprite
-			enemy.enemyType = ENEMY_SQUIRREL;
-
-			int row = rand() % 4;
-			enemy.direction = row;
-			int col = rand() % 8;
-			enemy.setTextureRect(sf::IntRect(32 * col, 32 * row, 32, 32));
-		}
-
-		sf::Vector2f viewCenter = view.getCenter();
-		int x = viewCenter.x + (rand() % static_cast<int>(viewSize.x - enemy.getLocalBounds().width)) - viewSize.x / 2;
-		int y = viewCenter.y + (rand() % static_cast<int>(viewSize.y - enemy.getLocalBounds().height)) - viewSize.y / 2;
-
-		enemy.setPosition(x, y);
-		enemies.push_back(enemy);
-	}
-
-
-	
-
-}
-
 class Enemy {
 public:
     // Constructor to initialize enemy with specific health points
@@ -63,51 +20,60 @@ public:
     // Virtual function for enemy interaction with plants
     //virtual void interact(Plant& plant) = 0;
 
-protected:
+private:
     int healthPoints_; // Health points of the enemy
-	Texture
+	sf::Texture frogTexture;
+	sf::Texture cricketTexture;
+	sf::Texture squirrelTexture;
+	sf::Sprite enemy;
+	sf::Vector2f direction;
+	void init()
+	{
+		frogTexture.loadFromFile("graphics/frog.png");
+		cricketTexture.loadFromFile("graphics/cricket.png");
+		squirrelTexture.loadFromFile("graphics/squirrel.png");
+	}
+	void createEnemy()
+	{
+		//create an enemy somewhere on the players screen
+		int x = rand() % 800;
+		int y = rand() % 600;
 
+		enemy.setPosition(x, y);
+			
+			int enemyType = rand() % 3;
+			if (enemyType == 1)
+			{
+				enemy.setTexture(frogTexture);
+				enemy.setScale(0.5f, 0.5f);
+			}
+			else if (enemyType == 2)
+			{
+				enemy.setTexture(cricketTexture);
+				enemy.setScale(0.5f, 0.5f);
+			}
+			else // Add squirrel enemy type
+			{
+				enemy.setTexture(squirrelTexture);
+				enemy.setScale(2.0f, 2.0f); // Scale the squirrel sprite
+			}
+
+
+
+
+
+	}
 	void updateEnemy()
 	{
-		void updateEnemies(float deltaTime)
-		{
-			sf::Vector2f playerPos = heroSprite.getPosition();
-			float enemySpeed = 100.0f;
+		//make the enemy move randomly
+		int x = rand() % 3 - 1;
+		int y = rand() % 3 - 1;
+		float speed = 100;
+		direction.x = x;
+		direction.y = y;
 
-			for (auto& enemy : enemies)
-			{
-				// Calculate the direction vector from the enemy to the player
-				sf::Vector2f direction = playerPos - enemy.getPosition();
+		enemy.move(direction * speed);
 
-				// Fix the direction vector so it acually points to the player
-				float length = std::sqrt(direction.x * direction.x + direction.y * direction.y);
-				direction.x /= length;
-				direction.y /= length;
-
-				// Determine the animation row based on the direction 
-				//this will be used later to create the specefic animation
-				int prevDirection = enemy.direction;
-				if (std::abs(direction.x) > std::abs(direction.y))
-				{
-					if (direction.x > 0)
-						enemy.direction = 0; // Moving right
-					else
-						enemy.direction = 1; // Moving left
-				}
-				else
-				{
-					if (direction.y > 0)
-						enemy.direction = 2; // Moving down
-					else
-						enemy.direction = 3; // Moving up
-				}
-
-				// Move the enemy towards the player
-				enemy.move(direction * enemySpeed * deltaTime);
-
-
-			}
-		}
 	}
 };
 
