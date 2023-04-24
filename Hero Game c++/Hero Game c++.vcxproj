@@ -133,6 +133,9 @@
     <ClCompile Include="code\enemy.cpp" />
     <ClCompile Include="code\frog.cpp" />
     <ClCompile Include="code\hero.cpp" />
+    <ClCompile Include="code\plant.cpp" />
+    <ClCompile Include="code\plant2.cpp" />
+    <ClCompile Include="code\plant3.cpp" />
     <ClCompile Include="code\run.cpp" />
     <ClCompile Include="code\squirrel.cpp" />
     <ClCompile Include="main.cpp" />

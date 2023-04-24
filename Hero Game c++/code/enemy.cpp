@@ -21,7 +21,7 @@ class enemies
 		int enemyType = rand() % 3;
 		if (enemyType == ENEMY_FROG)
 		{
-			enemy.setTexture(frogTexture);
+			enemy.setTexture(graphics/frog.png);
 			enemy.setScale(0.5f, 0.5f);
 		}
 		else if (enemyType == ENEMY_CRICKET)
@@ -51,45 +51,7 @@ class enemies
 	}
 
 
-	void updateEnemies(float deltaTime)
-	{
-		sf::Vector2f playerPos = heroSprite.getPosition();
-		float enemySpeed = 100.0f;
-
-		for (auto& enemy : enemies)
-		{
-			// Calculate the direction vector from the enemy to the player
-			sf::Vector2f direction = playerPos - enemy.getPosition();
-
-			// Fix the direction vector so it acually points to the player
-			float length = std::sqrt(direction.x * direction.x + direction.y * direction.y);
-			direction.x /= length;
-			direction.y /= length;
-
-			// Determine the animation row based on the direction 
-			//this will be used later to create the specefic animation
-			int prevDirection = enemy.direction;
-			if (std::abs(direction.x) > std::abs(direction.y))
-			{
-				if (direction.x > 0)
-					enemy.direction = 0; // Moving right
-				else
-					enemy.direction = 1; // Moving left
-			}
-			else
-			{
-				if (direction.y > 0)
-					enemy.direction = 2; // Moving down
-				else
-					enemy.direction = 3; // Moving up
-			}
-
-			// Move the enemy towards the player
-			enemy.move(direction * enemySpeed * deltaTime);
-
-
-		}
-	}
+	
 
 }
 
@@ -99,9 +61,53 @@ public:
     Enemy(int healthPoints) : healthPoints_(healthPoints) {}
 
     // Virtual function for enemy interaction with plants
-    virtual void interact(Plant& plant) = 0;
+    //virtual void interact(Plant& plant) = 0;
 
 protected:
     int healthPoints_; // Health points of the enemy
+	Texture
+
+	void updateEnemy()
+	{
+		void updateEnemies(float deltaTime)
+		{
+			sf::Vector2f playerPos = heroSprite.getPosition();
+			float enemySpeed = 100.0f;
+
+			for (auto& enemy : enemies)
+			{
+				// Calculate the direction vector from the enemy to the player
+				sf::Vector2f direction = playerPos - enemy.getPosition();
+
+				// Fix the direction vector so it acually points to the player
+				float length = std::sqrt(direction.x * direction.x + direction.y * direction.y);
+				direction.x /= length;
+				direction.y /= length;
+
+				// Determine the animation row based on the direction 
+				//this will be used later to create the specefic animation
+				int prevDirection = enemy.direction;
+				if (std::abs(direction.x) > std::abs(direction.y))
+				{
+					if (direction.x > 0)
+						enemy.direction = 0; // Moving right
+					else
+						enemy.direction = 1; // Moving left
+				}
+				else
+				{
+					if (direction.y > 0)
+						enemy.direction = 2; // Moving down
+					else
+						enemy.direction = 3; // Moving up
+				}
+
+				// Move the enemy towards the player
+				enemy.move(direction * enemySpeed * deltaTime);
+
+
+			}
+		}
+	}
 };
 
