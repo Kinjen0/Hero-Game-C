@@ -3,7 +3,18 @@
 
 
 
+class Squirrel : public Enemy {
+public:
+    // Constructor to initialize squirrel with specific health points
+    EnemyType3(int healthPoints) : Enemy(healthPoints) {}
 
+    // Implementation of the interact() function for squirrel
+    void interact(Plant& plant) override {
+        // Implement interaction logic for squirrel
+        // ...
+        std::cout << "EnemyType3 interacted with the plant." << std::endl;
+    }
+};
 
 
 	enemy.animationTimer += deltaTime;

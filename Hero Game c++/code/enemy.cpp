@@ -84,3 +84,16 @@ class enemies
 	}
 
 }
+
+class Enemy {
+public:
+    // Constructor to initialize enemy with specific health points
+    Enemy(int healthPoints) : healthPoints_(healthPoints) {}
+
+    // Virtual function for enemy interaction with plants
+    virtual void interact(Plant& plant) = 0;
+
+protected:
+    int healthPoints_; // Health points of the enemy
+};
+

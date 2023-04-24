@@ -6,9 +6,20 @@
 
 class Plant2 : public Plant {
 public:
-    // Implementation of the talk() function for Plant2
-    void talk() override {
-        // Dialogue for Plant2
-        std::cout << "Hey there, hero! I'm Plant2, the tough and tomboyish plant. How can I help you today?" << std::endl;
+    // Constructor to initialize Plant2 with specific health points
+    Plant2(int healthPoints) : Plant(healthPoints) {}
+
+    // Implementation of the interact() function for Plant2
+    void interact(Enemy& enemy) override {
+        // Implement interaction logic for Plant2
+        // ...
+        std::cout << "Plant2 interacted with the enemy." << std::endl;
+    }
+
+    // Implementation of the interact() function for Plant2 with hero
+    void interact(Hero& hero) override {
+        // Implement interaction logic for Plant2 with hero
+        // ...
+        std::cout << "Plant2 interacted with the hero." << std::endl;
     }
 };
