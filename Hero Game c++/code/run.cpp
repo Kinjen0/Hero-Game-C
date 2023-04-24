@@ -3,207 +3,84 @@
 #include <SFML/Audio.hpp>
 #include <cmath>
 #include <vector>
+#include <SFML/Graphics.hpp>
 
-class Enemy {
-public:
-    Enemy(sf::Texture& texture, int enemyType);
-    void update(float dt);
-    void render(sf::RenderWindow& window);
-private:
-    sf::Sprite sprite;
-    int enemyType;
-    int direction;
-    float animationTimer;
-    int textureColumn;
-    float animationSpeed;
-};
-
-class Hero {
-public:
-    Hero(sf::Texture& texture);
-    void update(float dt);
-    void render(sf::RenderWindow& window);
-    void handleInput();
-private:
-    sf::Sprite sprite;
-    sf::Vector2f position;
-    int speed;
-    bool movingLeft;
-    bool movingRight;
-    bool movingUp;
-    bool movingDown;
-};
+// Include Hero and TomatoPlant class headers
+#include "Hero.h"
+#include "TomatoPlant.h"
 
 class Game {
-public:
-    void run();
-private:
-    void init();
-    void handleInput();
-    void update();
-    void render();
-    void spawnEnemy();
-    void loadTextures();
-    void loadFont();
-private:
-    sf::Vector2f viewSize;
-    sf::RenderWindow window;
-    sf::Texture background;
-    sf::Sprite backgroundSprite;
-    Hero hero;
-    std::vector<Enemy> enemies;
-    sf::Font font;
-    sf::View view;
-    unsigned int score;
-    sf::Text scoreText;
-    int playerHealth;
-    sf::Text playerHealthText;
-    float spawnTimer;
-    const float CHARACTER_SCALE;
-    const int MAX_ENEMIES;
-    const float SPAWN_INTERVAL;
-    const int TILE_SIZE;
-    const int TILES_IN_ROW;
-    const int TILES_IN_COLUMN;
-    const int TILE_COLUMN;
-    const int TILE_ROW;
-    const int BACKGROUND_WIDTH;
-    const int BACKGROUND_HEIGHT;
-    sf::Texture tilesetTexture;
-    const int VISIBLE_TILES_X;
-    const int VISIBLE_TILES_Y;
-};
+    public:
+        Game() : window_(sf::VideoMode(800, 600), "My Game") {
+            // Load hero texture and create hero object
+            sf::Texture heroTexture;
+            if (!heroTexture.loadFromFile("hero.png")) {
+                // Handle error if texture fails to load
+            }
+            hero_ = Hero(heroTexture, sf::Vector2f(400.f, 300.f));
 
-Enemy::Enemy(sf::Texture& texture, int enemyType) {
-    sprite.setTexture(texture);
-    this->enemyType = enemyType;
-    // Set initial position, direction, animation timer, texture column, and animation speed
-    // ...
-}
+            // Load tomato plant texture and create tomato plant object
+            sf::Texture tomatoPlantTexture;
+            if (!tomatoPlantTexture.loadFromFile("tomato_plant.png")) {
+                // Handle error if texture fails to load
+            }
+            tomatoPlant_ = TomatoPlant(tomatoPlantTexture, sf::Vector2f(200.f, 200.f));
 
-void Enemy::update(float dt) {
-    // Update enemy's position, animation, etc.
-    // ...
-}
-
-void Enemy::render(sf::RenderWindow& window) {
-    window.draw(sprite);
-}
-
-Hero::Hero(sf::Texture& texture) {
-    sprite.setTexture(texture);
-    // Set initial position, speed, and moving flags
-    // ...
-}
-
-void Hero::update(float dt) {
-    // Update hero's position, animation, etc.
-    // ...
-}
-
-void Hero::render(sf::RenderWindow& window) {
-    window.draw(sprite);
-}
-
-void Hero::handleInput() {
-    // Handle hero's input for movement, attacks, etc.
-    // ...
-}
-
-void Game::run() {
-    init();
-
-    while (window.isOpen()) {
-        handleInput();
-        update();
-        render();
-    }
-}
-
-void Game::init() {
-    viewSize = sf::Vector2f(1280, 1040);
-    window.create(sf::VideoMode(viewSize.x, viewSize.y), "SFML works!");
-
-    // Load the background texture and sprite
-    //background.loadFromFile("Assets/Graphics/farm.png");
-    //backgroundSprite.setTexture(background);
-
-    // Load the hero texture and create hero object
-    sf::Texture heroTexture;
-    heroTexture.loadFromFile("Assets/Graphics/farmer.png");
-    hero = Hero(heroTexture);
-    // ...
-
-    // Load the font
-    font.loadFromFile("Alkatra-VariableFont_wght.ttf");
-
-    // Load the tileset texture
-    tilesetTexture.loadFromFile("Assets");
-}
-
-void Game::handleInput() {
-    // Handle input for hero and other game events
-    sf::Event event;
-    while (window.pollEvent(event)) {
-        if (event.type == sf::Event::Closed) {
-            window.close();
+            // Set up the game window
+            // ...
         }
-    }
 
-    hero.handleInput(); // Delegate hero's input handling to hero object
-}
+        void run() {
+            while (window_.isOpen()) {
+                sf::Event event;
+                while (window_.pollEvent(event)) {
+                    if (event.type == sf::Event::Closed) {
+                        window_.close();
+                    }
+                }
 
-void Game::update() {
-    float dt = clock.restart().asSeconds(); // Get delta time
+                // Handle input and update game state
+                handleInput();
+                update();
 
-    hero.update(dt); // Update hero object
+                // Clear the window
+                window_.clear();
 
-    for (auto& enemy : enemies) {
-        enemy.update(dt); // Update each enemy object
-    }
+                // Draw game objects
+                window_.draw(hero_.getSprite());
+                window_.draw(tomatoPlant_.getSprite());
 
-    spawnTimer += dt;
-    if (spawnTimer >= SPAWN_INTERVAL && enemies.size() < MAX_ENEMIES) {
-        spawnEnemy(); // Spawn enemy at regular intervals
-        spawnTimer = 0.f;
-    }
+                // Display the window
+                window_.display();
+            }
+        }
 
-    // Check for collisions, game over conditions, etc.
-    // ...
-}
+    private:
+        sf::RenderWindow window_;   // Game window
+        Hero hero_;                 // Hero object
+        TomatoPlant tomatoPlant_;   // TomatoPlant object
 
-void Game::render() {
-    window.clear(sf::Color::Black);
+        void handleInput() {
+            // Handle input for hero movement
+            // ...
 
-    window.setView(view);
-    window.draw(backgroundSprite); // Draw background
-    hero.render(window); // Draw hero
+            // Handle input for hero action (e.g. right mouse click)
+            if (sf::Mouse::isButtonPressed(sf::Mouse::Right)) {
+                hero_.action();
+            }
+        }
 
-    for (const auto& enemy : enemies) {
-        enemy.render(window); // Draw each enemy
-    }
+        void update() {
+            // Update game state
+            // ...
 
-    window.setView(window.getDefaultView());
-    window.draw(scoreText); // Draw score text
-    window.draw(playerHealthText); // Draw player health text
+            // Update hero animation
+            hero_.updateAnimation();
 
-    window.display();
-}
-
-void Game::spawnEnemy() {
-    // Spawn enemy with random type, initial position, etc.
-    // ...
-    Enemy enemy(enemyTexture, enemyType);
-    enemies.push_back(enemy);
-}
-
-void Game::loadTextures() {
-    // Load all the game textures
-    // ...
-}
-
-void Game::loadFont() {
-    // Load game font
-    // ...
-}
-
+            // Check for collision between hero and tomato plant
+            if (hero_.getSprite().getGlobalBounds().intersects(tomatoPlant_.getSprite().getGlobalBounds())) {
+                // Perform action when hero collides with tomato plant (e.g. show dialogue)
+                tomatoPlant_.interact(hero_);
+            }
+        }
+};
