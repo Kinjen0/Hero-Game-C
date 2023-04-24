@@ -1,3 +1,10 @@
+
+#include "SFML/Graphics.hpp"
+#include <iostream>
+#include <SFML/Audio.hpp>
+#include <cmath>
+
+
 class Cricket : public Enemy {
 public:
     // Constructor to initialize cricket with specific health points

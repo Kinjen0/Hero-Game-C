@@ -1,3 +1,9 @@
+
+#include "SFML/Graphics.hpp"
+#include <iostream>
+#include <SFML/Audio.hpp>
+#include <cmath>
+
 class Plant3 : public Plant {
 public:
     // Constructor to initialize Plant3 with specific health points

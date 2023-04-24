@@ -3,6 +3,12 @@
 
 
 
+#include "SFML/Graphics.hpp"
+#include <iostream>
+#include <SFML/Audio.hpp>
+#include <cmath>
+
+
 class Squirrel : public Enemy {
 public:
     // Constructor to initialize squirrel with specific health points
