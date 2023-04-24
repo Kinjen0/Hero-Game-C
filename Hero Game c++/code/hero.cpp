@@ -38,8 +38,60 @@ class Hero {
         	}
 		}
 
+		// Constructor to initialize hero
+		Hero(sf::Texture& texture, sf::Vector2f position)
+			: sprite_(texture), position_(position), currentDirection_(Direction::None), currentFrame_(0), frameDuration_(0.2f) {
+			// Set the initial sprite position
+			sprite_.setPosition(position_);
+		}
+
+		// Function to handle hero movement
+		void move(Direction direction) {
+			currentDirection_ = direction;
+			// Update hero position based on movement direction
+			// ...
+
+			// Update hero animation frame
+			updateAnimation();
+		}
+
+		// Function to update hero animation
+		void updateAnimation() {
+			// Calculate elapsed time since last frame update
+			float elapsedTime = clock_.getElapsedTime().asSeconds();
+
+			// Check if enough time has passed for next frame
+			if (elapsedTime >= frameDuration_) {
+				// Increment current frame
+				currentFrame_++;
+
+				// Wrap around to the first frame if reached the last frame
+				if (currentFrame_ >= numFrames_) {
+					currentFrame_ = 0;
+				}
+
+				// Update hero sprite texture rect to show the correct frame
+				sf::IntRect textureRect(currentFrame_ * frameWidth_, currentDirection_ * frameHeight_, frameWidth_, frameHeight_);
+				sprite_.setTextureRect(textureRect);
+
+				// Restart the clock for the next frame update
+				clock_.restart();
+			}
+		}
+
+
 	private:
 		sf::Sprite sprite;
+		sf::Sprite sprite_;               // Hero sprite
+		sf::Vector2f position_;          // Hero position
+		Direction currentDirection_;     // Current movement direction
+		int currentFrame_;               // Current animation frame
+		sf::Clock clock_;                // Clock for frame updates
+		float frameDuration_;            // Duration between animation frames
+		int frameWidth_ = 32;            // Width of each frame in the sprite sheet
+		int frameHeight_ = 32;           // Height of each frame in the sprite sheet
+		int numFrames_ = 4;              // Number of frames in each animation sequence
+
 
 		float moveSpeed = 2.f; // Speed of movement
 
