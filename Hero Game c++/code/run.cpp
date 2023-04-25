@@ -28,6 +28,37 @@ class Game {
             }
             tomatoPlant_ = TomatoPlant(tomatoPlantTexture, sf::Vector2f(200.f, 200.f));
 
+            //create the maps
+            Maps map;
+            sf::Texture baseGround;
+            baseGround = map.getBaseGround();
+            sf::Texture wallTexture;
+            wallTexture = map.getWallTexture();
+            int mapArray[10][10] = map.getMap();
+            sf::Sprite baseGroundSprite;
+            baseGroundSprite.setTexture(baseGround);
+            sf::Sprite wallSprite;
+            wallSprite.setTexture(wallTexture);
+            //create the map
+            for (int i = 0; i < 10; i++)
+            {
+                for (int j = 0; j < 10; j++)
+                {
+                    if (mapArray[i][j] == 1)
+                    {
+						wallSprite.setPosition(i * 32, j * 32);
+						window_.draw(wallSprite);
+					}
+                    else
+                    {
+						baseGroundSprite.setPosition(i * 32, j * 32);
+						window_.draw(baseGroundSprite);
+					}
+				}
+			}
+
+
+
             // Set up the game window
             // ...
         }
