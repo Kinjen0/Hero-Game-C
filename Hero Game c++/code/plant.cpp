@@ -2,6 +2,8 @@
 #include <iostream>
 #include <SFML/Audio.hpp>
 #include <cmath>
+#include "hero.h"
+#include "enemy.h"
 
 
 class Plant {

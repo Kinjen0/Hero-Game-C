@@ -163,4 +163,4 @@ private:
             clock_.restart();
         }
     }
-}
+};

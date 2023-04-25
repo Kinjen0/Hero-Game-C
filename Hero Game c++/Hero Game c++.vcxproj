@@ -142,6 +142,11 @@
     <ClCompile Include="code\squirrel.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="code\hero.h" />
+    <ClInclude Include="code\plant.h" />
+    <ClInclude Include="code\plant2.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
