@@ -131,7 +131,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="background.cpp" />
+    <ClCompile Include="maps.cpp" />
     <ClCompile Include="code\enemy.cpp" />
     <ClCompile Include="code\frog.cpp" />
     <ClCompile Include="code\hero.cpp" />
