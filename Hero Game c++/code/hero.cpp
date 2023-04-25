@@ -112,14 +112,15 @@ public:
 
 private:
     sf::Sprite sprite_;
-    sf::Vector2f position_;
-    Direction currentDirection_;
-    int currentFrame_;
-    sf::Clock clock_;
-    float frameDuration_;
-    int frameWidth_ = 32;
-    int frameHeight_ = 32;
-    int numFrames_ = 4;
+	//why'd you delete all the comments here?
+    // sf::Vector2f position_;
+    // Direction currentDirection_;
+    // int currentFrame_;
+    // sf::Clock clock_;
+    // float frameDuration_;
+    // int frameWidth_ = 32;
+    // int frameHeight_ = 32;
+    // int numFrames_ = 4;
 
     float moveSpeed = 2.f;
 
