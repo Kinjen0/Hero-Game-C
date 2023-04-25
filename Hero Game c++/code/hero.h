@@ -24,5 +24,4 @@ private:
     // Hero properties
     sf::Sprite sprite;
 };
-s
 #endif
