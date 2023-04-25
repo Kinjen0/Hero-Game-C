@@ -7,11 +7,13 @@
 class Plant {
 public:
     // Constructor to initialize plant with specific health points
-    Plant(int healthPoints) : healthPoints_(healthPoints) {}
+    Plant(int healthPoints) : healthPoints_(healthPoints) {
+        healthPoints = 50;
+    }
 
     // Virtual function for plant interaction with enemies
     virtual void interact(Enemy& enemy) = 0;
-    
+
     // Virtual function for plant interaction with hero
     virtual void interact(Hero& hero) = 0;
 
