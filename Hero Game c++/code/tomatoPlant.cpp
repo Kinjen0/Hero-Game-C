@@ -3,6 +3,9 @@
 #include <SFML/Audio.hpp>
 #include <cmath>
 
+#include "plant.h"
+#include "enemy.h"
+
 
 class TomatoPlant : public Plant {
 public:

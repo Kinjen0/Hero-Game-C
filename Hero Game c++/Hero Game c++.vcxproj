@@ -140,13 +140,16 @@
     <ClCompile Include="code\plant3.cpp" />
     <ClCompile Include="code\run.cpp" />
     <ClCompile Include="code\squirrel.cpp" />
+    <ClCompile Include="code\tomatoPlant.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="code\hero.h" />
     <ClInclude Include="code\plant.h" />
     <ClInclude Include="code\plant2.h" />
+    <ClInclude Include="enemy.h" />
     <ClInclude Include="maps.h" />
+    <ClInclude Include="tomatoPlant.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
