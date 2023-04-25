@@ -46,4 +46,18 @@
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="code\hero.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="code\plant.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="code\plant2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="maps.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
 </Project>
