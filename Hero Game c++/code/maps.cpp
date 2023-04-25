@@ -1,8 +1,7 @@
 #include <SFML/Graphics.hpp>
 
 
-class  maps
-{
+class  Maps {
 private:
 	sf::Texture mapTexture;
 	sf::Sprite baseGround;
@@ -51,10 +50,6 @@ public:
 			}
 		}
 	}
-
-
-
-
 
 
 

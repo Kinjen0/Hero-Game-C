@@ -14,6 +14,7 @@ public:
         // Implement interaction logic for TomatoPlant
         // ...
         std::cout << "TomatoPlant interacted with the enemy." << std::endl;
+        decreaseHealth(5);
     }
 
     // Implementation of the interact() function for Plant1 with hero
