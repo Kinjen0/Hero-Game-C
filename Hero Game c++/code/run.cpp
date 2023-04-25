@@ -57,7 +57,9 @@ class Game {
 				}
 			}
 
-
+            //create a view 
+            static sf::View view(sf::FloatRect(0, 0, 1280, 1040));
+            window_.setView(view);
 
             // Set up the game window
             // ...
@@ -92,10 +94,19 @@ class Game {
         sf::RenderWindow window_;   // Game window
         Hero hero_;                 // Hero object
         TomatoPlant tomatoPlant_;   // TomatoPlant object
+        sf::Event event;
 
         void handleInput() {
             // Handle input for hero movement
             // ...
+
+
+            hero_.handleInput(event);
+
+            hero_.update();
+
+            
+
 
             // Handle input for hero action (e.g. right mouse click)
             if (sf::Mouse::isButtonPressed(sf::Mouse::Right)) {

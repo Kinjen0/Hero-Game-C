@@ -58,11 +58,12 @@ public:
         }
     }
 
-    void update() {
+    void update(sf::View view) {
         Direction prevDirection = currentDirection_;
 
         if (movingLeft) {
             move(Direction::Left);
+
         }
         if (movingRight) {
             move(Direction::Right);
