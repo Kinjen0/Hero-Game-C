@@ -46,8 +46,8 @@ class Game {
                 {
                     if (mapArray[i][j] == 1)
                     {
-						wallSprite.setPosition(i * 32, j * 32);
-						window_.draw(wallSprite);
+                        wallSprite.setPosition(i * 32, j * 32);
+                        window_.draw(wallSprite);
 					}
                     else
                     {
