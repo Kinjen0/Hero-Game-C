@@ -5,7 +5,7 @@ class Hero {
 public:
     // Constructor
     Hero();
-
+    void handleInput(sf::Event event);
     // Movement functions
     void moveLeft();
     void moveRight();

@@ -5,6 +5,7 @@
 
 #include "plant.h"
 #include "enemy.h"
+#include "hero.h"
 
 
 class TomatoPlant : public Plant {

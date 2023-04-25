@@ -39,9 +39,9 @@ public:
 	{
 		return wallTexture;
 	}
-	int getMap()
+	int* getMap()
 	{
-		return map[10][10];
+		return &map[10][10];
 	}
 
 

@@ -19,7 +19,7 @@ public:
         sprite_.setPosition(position_);
     }
 
-    void handleInput(const sf::Event& event) {
+    void handleInput(sf::Event& event) {
         if (event.type == sf::Event::KeyPressed) {
             switch (event.key.code) {
             case sf::Keyboard::A:

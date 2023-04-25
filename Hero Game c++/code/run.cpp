@@ -30,15 +30,13 @@ class Game {
 
             //create the maps
             Maps map;
-            sf::Texture baseGround;
+            sf::Sprite baseGround;
             baseGround = map.getBaseGround();
-            sf::Texture wallTexture;
-            wallTexture = map.getWallTexture();
-            int mapArray[10][10] = map.getMap();
-            sf::Sprite baseGroundSprite;
-            baseGroundSprite.setTexture(baseGround);
             sf::Sprite wallSprite;
-            wallSprite.setTexture(wallTexture);
+            wallSprite = map.getWallTexture();
+            //get the map array
+
+            int mapArray[10][10] = map.getMap();
             //create the map
             for (int i = 0; i < 10; i++)
             {
@@ -51,8 +49,8 @@ class Game {
 					}
                     else
                     {
-						baseGroundSprite.setPosition(i * 32, j * 32);
-						window_.draw(baseGroundSprite);
+						baseGround.setPosition(i * 32, j * 32);
+						window_.draw(baseGround);
 					}
 				}
 			}

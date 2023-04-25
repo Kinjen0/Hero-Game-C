@@ -62,10 +62,10 @@
     <ClInclude Include="maps.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="tomatoPlant.h">
+    <ClInclude Include="enemy.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="enemy.h">
+    <ClInclude Include="code\tomatoPlant.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
