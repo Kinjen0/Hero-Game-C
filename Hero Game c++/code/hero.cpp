@@ -111,7 +111,7 @@ public:
     }
 
 private:
-    sf::Sprite sprite_;
+
 	//why'd you delete all the comments here?
     // sf::Vector2f position_;
     // Direction currentDirection_;
@@ -121,6 +121,16 @@ private:
     // int frameWidth_ = 32;
     // int frameHeight_ = 32;
     // int numFrames_ = 4;
+    sf::Sprite sprite;
+    sf::Sprite sprite_;               // Hero sprite
+    sf::Vector2f position_;          // Hero position
+    Direction currentDirection_;     // Current movement direction
+    int currentFrame_;               // Current animation frame
+    sf::Clock clock_;                // Clock for frame updates
+    float frameDuration_;            // Duration between animation frames
+    int frameWidth_ = 32;            // Width of each frame in the sprite sheet
+    int frameHeight_ = 32;           // Height of each frame in the sprite sheet
+    int numFrames_ = 4;              // Number of frames in each animation sequence
 
     float moveSpeed = 2.f;
 
