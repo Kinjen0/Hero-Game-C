@@ -8,12 +8,14 @@
 // Include Hero and TomatoPlant class headers
 #include "Hero.h"
 #include "TomatoPlant.h"
+#include "maps.h"
 
 class Game {
     public:
         Game() : window_(sf::VideoMode(800, 600), "My Game") {
             // Load hero texture and create hero object
             sf::Texture heroTexture;
+            
             if (!heroTexture.loadFromFile("hero.png")) {
                 // Handle error if texture fails to load
             }
@@ -69,6 +71,7 @@ class Game {
                 hero_.action();
             }
         }
+
 
         void update() {
             // Update game state

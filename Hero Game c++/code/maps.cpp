@@ -20,7 +20,7 @@ private:
 	};
 	
 public:
-	maps()
+	Maps()
 	{
 		mapTexture.loadFromFile("Graphics/Grass.png");
 		baseGround.setTexture(mapTexture);
@@ -29,27 +29,21 @@ public:
 		wallTexture.setTextureRect(sf::IntRect(14, 14, 49, 33));
 	}
 	
-	~maps();
+	~Maps();
 
-	void drawMap()
+	sf::Sprite getBaseGround()
 	{
-		//draw the map onto the screen
-		for (int i = 0; i < 10; i++)
-		{
-			for (int j = 0; i < 10; i++)
-			{
-				if (map[i][j] == 1)
-				{
-					baseGround.setPosition(i * 32, j * 32);
-				}
-				else if (map[i][j] == 2)
-				{
-					wallTexture.setPosition(i * 32, j * 32);
-					
-				}
-			}
-		}
+		return baseGround;
 	}
+	sf::Sprite getWallTexture()
+	{
+		return wallTexture;
+	}
+	int getMap()
+	{
+		return map[10][10];
+	}
+
 
 
 

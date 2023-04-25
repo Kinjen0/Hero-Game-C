@@ -33,9 +33,6 @@
     <ClCompile Include="code\squirrel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="maps.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="code\plant.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -43,6 +40,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="code\plant3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="code\maps.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
