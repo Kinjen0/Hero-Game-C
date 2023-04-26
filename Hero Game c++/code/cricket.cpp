@@ -8,7 +8,7 @@
 class Cricket : public Enemy {
 public:
     // Constructor to initialize cricket with specific health points
-    Pest(int healthPoints) : Enemy(healthPoints) {}
+    Cricket(int healthPoints) : Enemy(healthPoints) {}
 
     // Implementation of the interact() function for cricket
     void interact(Plant& plant) override {
