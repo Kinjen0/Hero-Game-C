@@ -19,15 +19,15 @@ class Game {
             if (!heroTexture.loadFromFile("hero.png")) {
                 // Handle error if texture fails to load
             }
-            hero_ = Hero(heroTexture, sf::Vector2f(400.f, 300.f));
+            hero_ = Hero(heroTexture, 400.f, 300.f);
 
             // Load tomato plant texture and create tomato plant object
             sf::Texture tomatoPlantTexture;
             if (!tomatoPlantTexture.loadFromFile("tomato_plant.png")) {
                 // Handle error if texture fails to load
             }
-            tomatoPlant_ = TomatoPlant(tomatoPlantTexture, sf::Vector2f(200.f, 200.f));
-
+ //tomatoPlant_ = TomatoPlant(tomatoPlantTexture, sf::Vector2f(200.f, 200.f));
+//commenting out to get it running quicker
             //create the maps
             Maps map;
             sf::Sprite baseGround;
@@ -36,7 +36,18 @@ class Game {
             wallSprite = map.getWallTexture();
             //get the map array
 
-            int mapArray[10][10] = map.getMap();
+            int mapArray[10][10] = {
+{ 1,1,1,1,1,1,1,1,1,1 },
+{ 1,0,0,0,0,0,0,0,0,1 },
+{ 1,0,0,0,0,0,0,0,0,1 },
+{ 1,0,0,0,0,0,0,0,0,1 },
+{ 1,0,0,0,2,2,0,0,0,1 },
+{ 1,0,0,0,2,2,0,0,0,1 },
+{ 1,0,0,0,0,0,0,0,0,1 },
+{ 1,0,0,0,0,0,0,0,0,1 },
+{ 1,0,0,0,0,0,0,0,0,1 },
+{ 1,1,1,1,1,1,1,1,1,1 }
+            };
             //create the map
             for (int i = 0; i < 10; i++)
             {
@@ -90,6 +101,7 @@ class Game {
 
     private:
         sf::RenderWindow window_;   // Game window
+
         Hero hero_;                 // Hero object
         TomatoPlant tomatoPlant_;   // TomatoPlant object
         sf::Event event;

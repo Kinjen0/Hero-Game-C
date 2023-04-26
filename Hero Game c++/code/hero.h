@@ -5,12 +5,28 @@ class Hero {
 public:
     // Constructor
     Hero();
-    void handleInput(sf::Event event);
+    Hero(sf::Texture& texture, float x, float y);
     // Movement functions
     void moveLeft();
     void moveRight();
     void moveUp();
     void moveDown();
+
+    //getters
+    sf::Sprite getSprite() const;
+
+    //update animation
+    void updateAnimation();
+
+    //handle input
+    void handleInput(sf::Event event);
+
+    //update function
+    void update();
+
+    
+    //action function for now
+    void action();
 
     // Action functions
     void waterSpell();

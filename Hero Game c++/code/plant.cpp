@@ -8,9 +8,18 @@
 
 class Plant {
 public:
+    // Constructor to initialize plant with default health points
+    Plant()
+    {
+        healthPoints_ = 50;
+    }
     // Constructor to initialize plant with specific health points
     Plant(int healthPoints) : healthPoints_(healthPoints) {
-        healthPoints = 50;
+        healthPoints_ = healthPoints;
+    }
+    Plant(int healthpoints)
+    {
+        healthPoints_= healthpoints;
     }
 
     // Virtual function for plant interaction with enemies

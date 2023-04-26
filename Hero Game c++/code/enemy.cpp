@@ -75,5 +75,11 @@ private:
 		enemy.move(direction * speed);
 
 	}
+
+	void interact();
+
+
+
+
 };
 

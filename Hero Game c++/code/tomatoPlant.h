@@ -11,8 +11,14 @@
 
 class TomatoPlant : public Plant {
 public:
+    TomatoPlant();
     // Constructor to initialize TomatoPlant with specific health points
     TomatoPlant(int healthPoints) : Plant(healthPoints) {}
+
+    //getternfuntions 
+    sf::Sprite getSprite();
+
+
 
     // Implementation of the interact() function for TomatoPlant
     void interact(Enemy& enemy) override;

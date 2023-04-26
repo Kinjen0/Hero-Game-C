@@ -58,7 +58,7 @@ public:
         }
     }
 
-    void update(sf::View view) {
+    void update() {
         Direction prevDirection = currentDirection_;
 
         if (movingLeft) {
@@ -163,4 +163,11 @@ private:
             clock_.restart();
         }
     }
+
+    //function to set the views center to that of the player
+    void setViewCenter(sf::View& view) {
+        view.setCenter(position_);
+    }
+
+
 };

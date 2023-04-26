@@ -9,7 +9,15 @@
 
 
 class TomatoPlant : public Plant {
+private:
+    int healthPoints = 50;
+
 public:
+
+    TomatoPlant()
+    {
+        healthPoints = 50;
+    }
     // Constructor to initialize TomatoPlant with specific health points
     TomatoPlant(int healthPoints) : Plant(healthPoints) {}
 
