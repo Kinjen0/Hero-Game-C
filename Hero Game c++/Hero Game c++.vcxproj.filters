@@ -68,5 +68,20 @@
     <ClInclude Include="code\tomatoPlant.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="code\squirrel.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="code\cricket.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="code\frog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="code\plant3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="code\run.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

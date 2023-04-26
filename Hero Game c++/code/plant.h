@@ -17,6 +17,7 @@ class Plant {
 public:
     // Constructor
     Plant();
+    Plant(int healthpoints);
 
     // Interaction function with Hero
     void interactWithHero(Hero& hero);

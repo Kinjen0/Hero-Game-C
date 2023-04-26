@@ -144,9 +144,14 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="code\cricket.h" />
+    <ClInclude Include="code\frog.h" />
     <ClInclude Include="code\hero.h" />
     <ClInclude Include="code\plant.h" />
     <ClInclude Include="code\plant2.h" />
+    <ClInclude Include="code\plant3.h" />
+    <ClInclude Include="code\run.h" />
+    <ClInclude Include="code\squirrel.h" />
     <ClInclude Include="code\tomatoPlant.h" />
     <ClInclude Include="enemy.h" />
     <ClInclude Include="maps.h" />

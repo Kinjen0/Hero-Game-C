@@ -13,7 +13,7 @@
 #include "plant3.h"
 #include "squirrel.h"
 
-class Frog {
+class Frog : public Enemy{
     public:
         // Constructor
         Frog();

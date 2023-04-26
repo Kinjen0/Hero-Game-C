@@ -110,7 +110,6 @@ class Game {
 
     private:
         sf::RenderWindow window_;   // Game window
-
         Hero hero_;                 // Hero object
         TomatoPlant tomatoPlant_;   // TomatoPlant object
         sf::Event event;

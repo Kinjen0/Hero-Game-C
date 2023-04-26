@@ -28,9 +28,9 @@ public:
     Plant(int healthPoints) : healthPoints_(healthPoints) {
         healthPoints_ = healthPoints;
     }
-    Plant(int healthpoints)
+    Plant(int healthPoints)
     {
-        healthPoints_= healthpoints;
+        healthPoints_= healthPoints;
     }
 
     // Virtual function for plant interaction with enemies
