@@ -67,7 +67,7 @@ class Game {
 			}
 
             //create a view 
-            static sf::View view(sf::FloatRect(0, 0, 1280, 1040));
+            static sf::View view(sf::FloatRect(0, 0, 800, 600));
             window_.setView(view);
 
             // Set up the game window

@@ -89,16 +89,43 @@ public:
 
         switch (direction) {
         case Direction::Left:
-            position_.x -= moveSpeed;
+            //if the player is out of the map
+            if (position_.x < 0)
+            {
+                position_.x = 0;
+			}
+            else
+            {
+				//move the player left
+				position_.x -= moveSpeed;
+			}            
             break;
         case Direction::Right:
-            position_.x += moveSpeed;
+            //if the player is out of the map
+            if (position_.x > 800)
+				position_.x = 800;
+            else
+            {//move the player right
+                position_.x += moveSpeed;
+            }
             break;
         case Direction::Up:
-            position_.y -= moveSpeed;
+            //if the player is out of the map
+            if (position_.y < 0)
+				position_.y = 0;
+            else
+            {//move the player up
+                position_.y -= moveSpeed;
+            }
             break;
         case Direction::Down:
-            position_.y += moveSpeed;
+            //if the player is out of the map
+            if (position_.y > 600)
+                position_.y = 600;
+            else
+            {//move the player down
+                position_.y += moveSpeed;
+            }
             break;
         default:
             break;
