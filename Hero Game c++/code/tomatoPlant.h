@@ -21,8 +21,8 @@ public:
 
 
     // Implementation of the interact() function for TomatoPlant
-    //void interact(Enemy& enemy) override;
+    void interact(Enemy& enemy) override;
 
     // Implementation of the interact() function for Plant1 with hero
-    //void interact(Hero & hero) override;
+    void interact(Hero& hero) override;
 };
