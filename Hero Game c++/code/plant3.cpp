@@ -4,6 +4,18 @@
 #include <SFML/Audio.hpp>
 #include <cmath>
 
+#include "tomatoPlant.h"
+#include "maps.h"
+#include "enemy.h"
+#include "cricket.h"
+#include "frog.h"
+#include "hero.h"
+#include "maps.h"
+#include "plant.h"
+#include "plant2.h"
+#include "run.h"
+#include "squirrel.h"
+
 class Plant3 : public Plant {
 public:
     // Constructor to initialize Plant3 with specific health points

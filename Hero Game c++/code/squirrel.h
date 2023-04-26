@@ -1,5 +1,17 @@
-#ifndef CRICKET_H
-#define CRICKET_H
+#ifndef SQUIRREL_H
+#define SQUIRREL_H
+
+#include "tomatoPlant.h"
+#include "maps.h"
+#include "enemy.h"
+#include "cricket.h"
+#include "frog.h"
+#include "hero.h"
+#include "maps.h"
+#include "plant.h"
+#include "plant2.h"
+#include "plant3.h"
+#include "run.h"
 
 #include "Plant.h" // Include any dependencies, such as the Plant class
 

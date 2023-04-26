@@ -1,7 +1,17 @@
-#ifndef CRICKET_H
-#define CRICKET_H
+#ifndef FROG_H
+#define FROG_H
 
-#include "Plant.h" // Include any dependencies, such as the Plant class
+#include "tomatoPlant.h"
+#include "maps.h"
+#include "enemy.h"
+#include "cricket.h"
+#include "run.h"
+#include "hero.h"
+#include "maps.h"
+#include "plant.h"
+#include "plant2.h"
+#include "plant3.h"
+#include "squirrel.h"
 
 class Frog {
     public:

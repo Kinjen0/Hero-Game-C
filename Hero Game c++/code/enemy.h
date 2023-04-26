@@ -5,6 +5,17 @@
 #include <SFML/Audio.hpp>
 #include <cmath>
 
+#include "tomatoPlant.h"
+#include "maps.h"
+#include "run.h"
+#include "cricket.h"
+#include "frog.h"
+#include "hero.h"
+#include "maps.h"
+#include "plant.h"
+#include "plant2.h"
+#include "plant3.h"
+#include "squirrel.h"
 
 class Enemy {
 public:

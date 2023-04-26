@@ -9,6 +9,18 @@
 #include <cmath>
 
 
+#include "tomatoPlant.h"
+#include "maps.h"
+#include "enemy.h"
+#include "cricket.h"
+#include "frog.h"
+#include "hero.h"
+#include "maps.h"
+#include "plant.h"
+#include "plant2.h"
+#include "plant3.h"
+#include "run.h"
+
 class Squirrel : public Enemy {
 public:
     // Constructor to initialize squirrel with specific health points
