@@ -12,7 +12,7 @@
 class Squirrel : public Enemy {
 public:
     // Constructor to initialize squirrel with specific health points
-    EnemyType3(int healthPoints) : Enemy(healthPoints) {}
+    Squirrel(int healthPoints) : Enemy(healthPoints) {}
 
     // Implementation of the interact() function for squirrel
     void interact(Plant& plant) override {
@@ -23,23 +23,23 @@ public:
 };
 
 
-	enemy.animationTimer += deltaTime;
-	if (enemy.animationTimer > enemy.animationSpeed)
-	{
-		enemy.animationTimer = 0.0f;
-		enemy.textureColumn++;
-		if (enemy.textureColumn >= 8)
-		{
-			enemy.textureColumn = 0;
-		}
+	// enemy.animationTimer += deltaTime;
+	// if (enemy.animationTimer > enemy.animationSpeed)
+	// {
+	// 	enemy.animationTimer = 0.0f;
+	// 	enemy.textureColumn++;
+	// 	if (enemy.textureColumn >= 8)
+	// 	{
+	// 		enemy.textureColumn = 0;
+	// 	}
 
-		int row = enemy.direction;
-		sf::IntRect rect(enemy.textureColumn * 32, row * 32, 32, 32);
-		enemy.setTextureRect(rect);
-	}
+	// 	int row = enemy.direction;
+	// 	sf::IntRect rect(enemy.textureColumn * 32, row * 32, 32, 32);
+	// 	enemy.setTextureRect(rect);
+	// }
 
-	void loadSquirrelTexture()
-	{
-		squirrelTexture.loadFromFile("Assets/Graphics/squirrel.png");
-		squirrelTexture.setSmooth(true);
-	}
+	// void loadSquirrelTexture()
+	// {
+	// 	squirrelTexture.loadFromFile("Assets/Graphics/squirrel.png");
+	// 	squirrelTexture.setSmooth(true);
+	// }

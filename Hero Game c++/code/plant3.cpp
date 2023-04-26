@@ -22,4 +22,9 @@ public:
         // ...
         std::cout << "Plant3 interacted with the hero." << std::endl;
     }
+
+private:
+    sf::Sprite sprite;
+    int health;
+
 };
