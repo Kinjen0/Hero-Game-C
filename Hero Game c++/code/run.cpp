@@ -3,24 +3,21 @@
 #include <SFML/Audio.hpp>
 #include <cmath>
 #include <vector>
-#include <SFML/Graphics.hpp>
 
 // Include Hero and TomatoPlant class headers
 #include "tomatoPlant.h"
 #include "maps.h"
 #include "enemy.h"
-#include "cricket.h"
 #include "frog.h"
 #include "hero.h"
 #include "maps.h"
 #include "plant.h"
-#include "plant2.h"
-#include "plant3.h"
 #include "squirrel.h"
 
 
 class Game {
     public:
+        
         Game() : window_(sf::VideoMode(800, 600), "My Game") {
             // Load hero texture and create hero object
             sf::Texture heroTexture;
@@ -35,7 +32,7 @@ class Game {
             if (!tomatoPlantTexture.loadFromFile("tomato_plant.png")) {
                 // Handle error if texture fails to load
             }
- //tomatoPlant_ = TomatoPlant(tomatoPlantTexture, sf::Vector2f(200.f, 200.f));
+//tomatoPlant_ = TomatoPlant(tomatoPlantTexture, sf::Vector2f(200.f, 200.f));
 //commenting out to get it running quicker
             //create the maps
             Maps map;

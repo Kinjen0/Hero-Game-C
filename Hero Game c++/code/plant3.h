@@ -1,17 +1,8 @@
 #ifndef PLANT3_H
 #define PLANT3_H
 
-#include "tomatoPlant.h"
-#include "maps.h"
-#include "enemy.h"
-#include "cricket.h"
-#include "frog.h"
 #include "hero.h"
-#include "maps.h"
-#include "plant.h"
-#include "plant2.h"
-#include "run.h"
-#include "squirrel.h"
+
 
 class Plant3 {
 public:

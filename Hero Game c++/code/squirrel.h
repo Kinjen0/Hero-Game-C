@@ -1,19 +1,16 @@
 #ifndef SQUIRREL_H
 #define SQUIRREL_H
 
-#include "tomatoPlant.h"
-#include "maps.h"
-#include "enemy.h"
-#include "cricket.h"
-#include "frog.h"
-#include "hero.h"
-#include "maps.h"
-#include "plant.h"
-#include "plant2.h"
-#include "plant3.h"
-#include "run.h"
+#include "SFML/Graphics.hpp"
+#include <iostream>
+#include <SFML/Audio.hpp>
+#include <cmath>
 
-#include "Plant.h" // Include any dependencies, such as the Plant class
+
+#include "enemy.h"
+
+
+#include "plant.h" // Include any dependencies, such as the Plant class
 
 class Squirrel {
     public:

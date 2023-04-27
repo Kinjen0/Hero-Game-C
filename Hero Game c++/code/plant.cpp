@@ -2,20 +2,10 @@
 #include <iostream>
 #include <SFML/Audio.hpp>
 #include <cmath>
-#include "hero.h"
 #include "enemy.h"
 
-#include "tomatoPlant.h"
-#include "maps.h"
-#include "enemy.h"
-#include "cricket.h"
-#include "frog.h"
 #include "hero.h"
-#include "maps.h"
-#include "run.h"
-#include "plant2.h"
-#include "plant3.h"
-#include "squirrel.h"
+
 
 class Plant {
 public:
@@ -28,10 +18,7 @@ public:
     Plant(int healthPoints) : healthPoints_(healthPoints) {
         healthPoints_ = healthPoints;
     }
-    Plant(int healthPoints)
-    {
-        healthPoints_= healthPoints;
-    }
+
 
     // Virtual function for plant interaction with enemies
     virtual void interact(Enemy& enemy) = 0;

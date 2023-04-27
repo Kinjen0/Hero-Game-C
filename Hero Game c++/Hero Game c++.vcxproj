@@ -110,6 +110,7 @@
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;sfml-audio-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\SFML-2.5.1\lib</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -128,33 +129,29 @@
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;sfml-audio-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\SFML-2.5.1\lib</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="code\enemy.cpp" />
     <ClCompile Include="code\frog.cpp" />
     <ClCompile Include="code\hero.cpp" />
+    <ClCompile Include="code\main.cpp" />
     <ClCompile Include="code\maps.cpp" />
     <ClCompile Include="code\plant.cpp" />
-    <ClCompile Include="code\plant2.cpp" />
-    <ClCompile Include="code\plant3.cpp" />
     <ClCompile Include="code\run.cpp" />
     <ClCompile Include="code\squirrel.cpp" />
     <ClCompile Include="code\tomatoPlant.cpp" />
-    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="code\cricket.h" />
+    <ClInclude Include="code\enemy.h" />
     <ClInclude Include="code\frog.h" />
     <ClInclude Include="code\hero.h" />
+    <ClInclude Include="code\maps.h" />
     <ClInclude Include="code\plant.h" />
-    <ClInclude Include="code\plant2.h" />
-    <ClInclude Include="code\plant3.h" />
     <ClInclude Include="code\run.h" />
     <ClInclude Include="code\squirrel.h" />
     <ClInclude Include="code\tomatoPlant.h" />
-    <ClInclude Include="enemy.h" />
-    <ClInclude Include="maps.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -5,20 +5,16 @@
 #include <cmath>
 
 
-#include "run.h"
-#include "maps.h"
 #include "enemy.h"
-#include "cricket.h"
-#include "frog.h"
+
 #include "hero.h"
-#include "maps.h"
+
+
 #include "plant.h"
-#include "plant2.h"
-#include "plant3.h"
-#include "squirrel.h"
 
 
-class TomatoPlant : public Plant {
+
+class TomatoPlant : public Plant{
 public:
     TomatoPlant();
     // Constructor to initialize TomatoPlant with specific health points
